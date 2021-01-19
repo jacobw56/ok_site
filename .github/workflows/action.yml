@@ -1,0 +1,15 @@
+name: "Overkill Projects static page"
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout of Overkill Projects site"
+        uses: actions/checkout@v2
+        with:
+          repository: "jacobw56/ok_site"
+          ref: "main"
+
