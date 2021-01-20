@@ -36,7 +36,7 @@ function YTNails() {
         (result) => {
           setIsLoaded(true);
           setItems(result.items);
-          console.log(result);
+          //console.log(result);
         },
         (error) => {
           setIsLoaded(true);

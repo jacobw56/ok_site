@@ -22,7 +22,7 @@ const { Title } = Typography;
 const App = () => {
   return (
     <Layout className="layout">
-      <Content style={{ padding: '0 50px' }}>
+      <Content style={{ padding: '0 50px'; maxWidth: '1200px'; }}>
         {/* <Breadcrumb style={{ margin: '16px 0' }}>
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item>List</Breadcrumb.Item>
@@ -44,7 +44,7 @@ const App = () => {
         </ul>
         </Title>
         <Title level={3} style={{padding: '10px 10px'}}>Contact:</Title>
-        <Title level={5} style={{padding: '10px 10px'}}>Feel free to reach out to us anytime by <a href='mailto:overkill.projects.limited@gmail.com'>email</a> or by phone at 856 405 5932.</Title>
+        <Title level={5} style={{padding: '10px 10px'}}>Feel free to reach out to us anytime by <a href='mailto:overkill.projects.limited@gmail.com'>email</a> or by phone at <a href={'tel:+18564055932'}>856 405 5932</a>.</Title>
         <Title level={3} style={{padding: '10px 10px'}}>Latest from the YouTube channel:</Title>
         <YTNails />
       </Content>
