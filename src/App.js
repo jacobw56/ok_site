@@ -22,7 +22,7 @@ const { Title } = Typography;
 const App = () => {
   return (
     <Layout className="layout">
-      <Content style={{ padding: '0 50px', maxWidth: '1200px', }}>
+      <Content style={{ padding: '0 50px', maxWidth: '1200px', margin: 'auto' }}>
         {/* <Breadcrumb style={{ margin: '16px 0' }}>
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item>List</Breadcrumb.Item>
