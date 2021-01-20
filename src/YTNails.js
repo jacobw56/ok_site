@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Image, Row, Col } from 'antd';
+import { Anchor, Card, Image, Row, Col } from 'antd';
 
 const { Meta } = Card;
 const baseURL = 'https://youtube.googleapis.com/youtube/v3/playlistItems?'; // part=snippet&playlistId=UUfb1xoLtuLp5rOLEcJ2Y_YQ&maxResults=4&key=AIzaSyDejdMcPh15Ao7UN1YdkPVNOuvKIvGrzT4
@@ -48,6 +48,7 @@ function YTNails() {
   return <Row>{
     items.map((video, idx) =>
       <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={6} key={idx}>
+      <a href={'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId} target="_blank">
         <Card
           hoverable
           style={{padding: '10px'}}
@@ -55,6 +56,7 @@ function YTNails() {
         >
           <Meta title={video.snippet.title} />
         </Card>
+        </a>
       </Col>)
   }</Row>;
 }
