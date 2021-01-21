@@ -4,9 +4,11 @@ import banner from './banner.png';
 import {
   //Breadcrumb,
   //Button,
+  Col,
   Image,
   Layout,
   //Menu,
+  Row,
   Typography
 } from 'antd';
 import './App.css';
@@ -28,23 +30,41 @@ const App = () => {
           <Breadcrumb.Item>List</Breadcrumb.Item>
           <Breadcrumb.Item>App</Breadcrumb.Item>
         </Breadcrumb> */}
-        <Image alt="Overkill Projects Limited" src={banner} preview={false} />
-        <Title level={5} style={{padding: '10px 10px'}}>
-          Here at Overkill Projects, we help businesses and individuals take their ideas from concept to reality. Whatever your technology needs, we have the domain experience necessary to help you achieve your goals.
-        </Title>
-        <Title level={3} style={{padding: '10px 10px'}}>Services:</Title>
-        <Title level={5} style={{padding: '10px 10px'}}>
-        <ul>
-          <li>Prototyping and MVP design</li>
-          <li>Circuit design</li>
-          <li>PCB design and analysis</li>
-          <li>Device optimization</li>
-          <li>Manufacturing and assembly</li>
-          <li>Consultation services</li>
-        </ul>
-        </Title>
-        <Title level={3} style={{padding: '10px 10px'}}>Contact:</Title>
-        <Title level={5} style={{padding: '10px 10px'}}>Feel free to reach out to us anytime by <a href='mailto:overkill.projects.limited@gmail.com'>email</a> or by phone at <a href={'tel:+18564055932'}>856 405 5932</a>.</Title>
+        <Row>
+          <Col span={24}>
+            <Image alt="Overkill Projects Limited" src={banner} preview={false} style={{ width: '100%' }} />
+          </Col>
+        </Row>
+        <Row>
+          <Col span={24}>
+            <Title level={5} style={{padding: '10px 10px'}}>
+              Here at Overkill Projects, we help businesses and individuals take their ideas from concept to reality. Whatever your technology needs, we have the domain experience necessary to help you achieve your goals.
+            </Title>
+          </Col>
+        </Row>
+        <Row>
+          <Col span={24}>
+            <Title level={3} style={{padding: '10px 10px'}}>Services:</Title>
+            <Title level={5} style={{padding: '10px 10px'}}>
+            <ul>
+              <li>Prototyping and MVP design</li>
+              <li>Test equipment design</li>
+              <li>Manufacturing IoT design</li>
+              <li>Circuit design</li>
+              <li>PCB design and analysis</li>
+              <li>Device optimization</li>
+              <li>Manufacturing and assembly</li>
+              <li>Consultation services</li>
+            </ul>
+            </Title>
+          </Col>
+        </Row>
+        <Row>
+          <Col span={24}>
+            <Title level={3} style={{padding: '10px 10px'}}>Contact:</Title>
+            <Title level={5} style={{padding: '10px 10px'}}>Feel free to reach out to us anytime by <a href='mailto:overkill.projects.limited@gmail.com'>email</a> or by phone at <a href={'tel:+18564055932'}>856 405 5932</a>.</Title>
+          </Col>
+        </Row>
         <Title level={3} style={{padding: '10px 10px'}}>Latest from the YouTube channel:</Title>
         <YTNails />
       </Content>
