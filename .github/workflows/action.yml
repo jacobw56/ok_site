@@ -18,16 +18,9 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            git clone git@github.com:jacobw56/ok_site.git
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            nvm install --lts
             cd ~/ok_site/
-            ls -l
-            npm install
-            ls -l
+            git pull git@github.com:jacobw56/ok_site.git
             npm run build
-            ls -l build
             cp -rf build/* /var/www/overkillprojects.com/
-            cd ..
-            rm -rf ok_site
