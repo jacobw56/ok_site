@@ -48,7 +48,7 @@ function YTNails() {
   return <Row>{
     items.map((video, idx) =>
       <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={6} key={idx}>
-      <a href={'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId} target="_blank">
+      <a href={'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId} target="_blank" rel="noreferrer">
         <Card
           hoverable
           style={{padding: '10px'}}
