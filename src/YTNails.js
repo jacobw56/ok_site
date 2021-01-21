@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Anchor, Card, Image, Row, Col } from 'antd';
+import { Card, Image, Row, Col } from 'antd';
 
 const { Meta } = Card;
 const baseURL = 'https://youtube.googleapis.com/youtube/v3/playlistItems?'; // part=snippet&playlistId=UUfb1xoLtuLp5rOLEcJ2Y_YQ&maxResults=4&key=AIzaSyDejdMcPh15Ao7UN1YdkPVNOuvKIvGrzT4
@@ -11,8 +11,8 @@ const query = {
 };
 
 function YTNails() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  //const [error, setError] = useState(null);
+  //const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -34,13 +34,13 @@ function YTNails() {
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
+          //setIsLoaded(true);
           setItems(result.items);
           //console.log(result);
         },
         (error) => {
-          setIsLoaded(true);
-          setError(error);
+          //setIsLoaded(true);
+          //setError(error);
         }
       )
   }, []);
