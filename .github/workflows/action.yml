@@ -16,7 +16,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
-          port: ${{ secret.PORT }}
+          port: ${{ secrets.PORT }}
           script: |
             git clone git clone git@github.com:jacobw56/ok_site.git
             cd ok_site
