@@ -22,5 +22,6 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             cd ~/ok_site
             git pull git@github.com:jacobw56/ok_site.git
+            npm install
             npm run build
             cp -rf build/* /var/www/overkillprojects.com/
