@@ -73,7 +73,7 @@ function YTNails() {
     items.map((video, idx) =>
       <Grid item xs={12} sm={6} md={6} lg={6} xl={6} xxl={6} key={idx}>
       {/*<a href={'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId} target="_blank" rel="noreferrer">*/}
-        <Card className={classes.cardRoot}>
+        <Card elevation={3} className={classes.cardRoot}>
           <a href={'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId} target="_blank" rel="noreferrer">
           <CardActionArea>
             <CardMedia
