@@ -8,12 +8,21 @@ import {
   Grid,
   Paper,
 } from '@material-ui/core';
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 //import purple from '@material-ui/core/colors/purple';
 import './App.css';
 
+const themeLight = createMuiTheme({
+  palette: {
+    background: {
+      default: "#ffffff"
+    }
+  }
+});
+
 const App = () => {
   return (
-    <React.Fragment>
+    <MuiThemeProvider theme={themeLight}>
       <CssBaseline />
       <Container maxWidth={'lg'}>
         <Grid container xs={12}>
@@ -40,7 +49,7 @@ const App = () => {
             </ul>
           </Box>
         </Grid>
-        
+
         <Grid container xs={12}>
           <Box p={3}>
             <h3>Contact:</h3>
@@ -60,7 +69,7 @@ const App = () => {
           </Box>
         {/*</Paper>*/}
       </Container>
-    </React.Fragment>
+    </MuiThemeProvider>
   );
 }
 
