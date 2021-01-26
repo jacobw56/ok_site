@@ -2,50 +2,32 @@ import React from 'react';
 import YTNails from './YTNails.js';
 import banner from './banner.png';
 import {
-  //Breadcrumb,
-  //Button,
-  Col,
-  Image,
-  Layout,
-  //Menu,
-  Row,
-  Typography
-} from 'antd';
+  Box,
+  Container,
+  CssBaseline,
+  Grid,
+  Paper,
+} from '@material-ui/core';
+//import purple from '@material-ui/core/colors/purple';
 import './App.css';
-
-const {
-  //Header,
-  Footer,
-  //Sider,
-  Content
-} = Layout;
-const { Title } = Typography;
 
 const App = () => {
   return (
-    <Layout className="layout">
-      <Content style={{ padding: '0 50px', maxWidth: '1200px', margin: 'auto' }}>
-        {/* <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb> */}
-        <Row>
-          <Col span={24}>
-            <Image alt="Overkill Projects Limited" src={banner} preview={false} style={{ width: '100%' }} />
-          </Col>
-        </Row>
-        <Row>
-          <Col span={24}>
-            <Title level={5} style={{padding: '10px 10px'}}>
-              Here at Overkill Projects, we help businesses and individuals take their ideas from concept to reality. Whatever your technology needs, we have the domain experience necessary to help you achieve your goals.
-            </Title>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={24}>
-            <Title level={3} style={{padding: '10px 10px'}}>Services:</Title>
-            <Title level={5} style={{padding: '10px 10px'}}>
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth={'lg'}>
+        <Grid container xs={12}>
+            <img alt="Overkill Projects Limited" src={banner} style={{ width: '100%' }} />
+        </Grid>
+        <Grid container xs={12}>
+          <Box p={3}>
+              At Overkill Projects, we help businesses and individuals take their ideas from concept to reality. Whatever your technology needs, we have the domain experience necessary to help you achieve your goals.
+          </Box>
+        </Grid>
+
+        <Grid container xs={12}>
+          <Box p={3}>
+            <h3>Services:</h3>
             <ul>
               <li>Prototyping and MVP design</li>
               <li>Test equipment design</li>
@@ -56,20 +38,29 @@ const App = () => {
               <li>Manufacturing and assembly</li>
               <li>Consultation services</li>
             </ul>
-            </Title>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={24}>
-            <Title level={3} style={{padding: '10px 10px'}}>Contact:</Title>
-            <Title level={5} style={{padding: '10px 10px'}}>Feel free to reach out to us anytime by <a href='mailto:overkill.projects.limited@gmail.com'>email</a> or by phone at <a href={'tel:+18564055932'}>856 405 5932</a>.</Title>
-          </Col>
-        </Row>
-        <Title level={3} style={{padding: '10px 10px'}}>Latest from the YouTube channel:</Title>
+          </Box>
+        </Grid>
+        
+        <Grid container xs={12}>
+          <Box p={3}>
+            <h3>Contact:</h3>
+            <ul>
+            Feel free to reach out to us anytime by <a href='mailto:overkill.projects.limited@gmail.com'>email</a> or by phone at <a href={'tel:+18564055932'}>856 405 5932</a>.
+            </ul>
+          </Box>
+        </Grid>
+        <h3>Latest from the YouTube channel:</h3>
+
         <YTNails />
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Overkill Projects Limited ©2021</Footer>
-    </Layout>
+      </Container>
+      <Container>
+        {/*<Paper elevation={3}>*/}
+          <Box color="text.primary" p={3}>
+            Overkill Projects Limited ©2021
+          </Box>
+        {/*</Paper>*/}
+      </Container>
+    </React.Fragment>
   );
 }
 

@@ -1,7 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Image, Row, Col } from 'antd';
+import { makeStyles } from '@material-ui/core/styles';
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  //Button,
+  Grid,
+  Typography,
+} from '@material-ui/core';
 
-const { Meta } = Card;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  cardRoot: {
+    maxWidth: '480',
+  },
+  media: {
+    minHeight: '22vh',
+  },
+}));
+
 const baseURL = 'https://youtube.googleapis.com/youtube/v3/playlistItems?'; // part=snippet&playlistId=UUfb1xoLtuLp5rOLEcJ2Y_YQ&maxResults=4&key=AIzaSyDejdMcPh15Ao7UN1YdkPVNOuvKIvGrzT4
 const query = {
   part: 'snippet',
@@ -45,20 +66,44 @@ function YTNails() {
       )
   }, []);
 
-  return <Row>{
+  const classes = useStyles();
+
+  return <div className={classes.root}>
+  <Grid container spacing={3}>{
     items.map((video, idx) =>
-      <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={6} key={idx}>
-      <a href={'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId} target="_blank" rel="noreferrer">
-        <Card
-          hoverable
-          style={{padding: '10px'}}
-          cover={<Image alt='youtube_thumb' preview={false} src={video.snippet.thumbnails.high.url} />}
-        >
-          <Meta title={video.snippet.title} />
+      <Grid item xs={12} sm={6} md={6} lg={6} xl={6} xxl={6} key={idx}>
+      {/*<a href={'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId} target="_blank" rel="noreferrer">*/}
+        <Card className={classes.cardRoot}>
+          <a href={'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId} target="_blank" rel="noreferrer">
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image={video.snippet.thumbnails.high.url}
+              title={video.snippet.title}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {video.snippet.title}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {video.snippet.description.split('========================================')[0]}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          </a>
+          <CardActions>
+            {/*<Button size="small" color="primary">
+              Share
+            </Button>
+            <Button size="small" color="primary">
+              Learn More
+            </Button>*/}
+          </CardActions>
         </Card>
-        </a>
-      </Col>)
-  }</Row>;
+        {/*</a>*/}
+      </Grid>)
+  }</Grid>
+  </div>;
 }
 
 export default YTNails;

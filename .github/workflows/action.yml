@@ -20,7 +20,7 @@ jobs:
           script: |
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            cd ~/ok_site/
+            cd ~/ok_site
             git pull git@github.com:jacobw56/ok_site.git
             npm run build
             cp -rf build/* /var/www/overkillprojects.com/
